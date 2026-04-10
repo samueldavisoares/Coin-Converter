@@ -32,14 +32,16 @@ function convertValues() {                                             //so o va
 
 function changeCurrency() {
     const currencyName = document.querySelector("#currency-name")
-
+    const currencyImg = document.querySelector("#flag-name")
 
     if (currencySelect.value == "dolar") {
         currencyName.innerHTML = "Dolar"
+        currencyImg.src = "./assets/DOLAR.png"
     }
 
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = "Euro"
+        currencyImg.src = "./assets/EURO.png"
     }
 }
 
