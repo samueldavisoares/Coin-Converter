@@ -1,6 +1,10 @@
 const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
 
+function convertFromValue() {
+
+}
+
 
 function convertValues() {                                             //so o valor do input
     const inputCurrencyValue = document.querySelector(".input-currency").value
@@ -31,11 +35,14 @@ function convertValues() {                                             //so o va
             currency: "GBP"
         }).format(inputCurrencyValue / libraToday)
     }
-    // para formatar o valor do input para o formato de moeda brasileira
-    currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
+
+    if (currencySelect.value == "real") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
-        currency: "BRL"
-    }).format(inputCurrencyValue)
+        currency: "BRL"})
+    }
+    // para formatar o valor do input para o formato de moeda brasileira
+    
 }
 
 function changeCurrency() {
@@ -56,6 +63,8 @@ function changeCurrency() {
         currencyName.innerHTML = "libra"
         currencyImg.src = "./assets/LIBRA.png"
     }
+
+
     convertValues()
 }
 
